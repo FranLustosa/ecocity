@@ -1,4 +1,5 @@
 import 'package:app_ecocity/src/ui/theme/colors.dart';
+import 'package:app_ecocity/src/view/PageLogin.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
         // ignore: deprecated_member_use
         backgroundColor: ColorSystem.primaryColor,
       ),
-      //home: Home(),
+      home: const PageLogin(),
     );
   }
 }
