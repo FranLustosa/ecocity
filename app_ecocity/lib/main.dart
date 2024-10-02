@@ -1,6 +1,6 @@
-import 'package:app_ecocity/src/ui/theme/colors.dart';
-import 'package:app_ecocity/src/view/login.dart';
-import 'package:app_ecocity/src/view/splashscreen.dart';
+import 'package:app_ecocity/src/ui/theme/custom_colors.dart';
+import 'package:app_ecocity/src/view/page_login.dart';
+import 'package:app_ecocity/src/view/page_splashscreen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -17,9 +17,14 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         // ignore: deprecated_member_use
-        backgroundColor: ColorSystem.primaryColor,
+        backgroundColor: CustomColors.primaryColor,
       ),
+      routes: {Routes.splash: (context) => CustomLogin()},
       home: const splashscreen(),
     );
   }
+}
+
+class Routes {
+  static String splash = "splash/";
 }

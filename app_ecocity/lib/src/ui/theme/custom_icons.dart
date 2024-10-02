@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class Icones {
+class CustomIcons {
   // ícones material design
   static const IconData home = Icons.home_outlined;
   static const IconData location = Icons.push_pin_outlined;

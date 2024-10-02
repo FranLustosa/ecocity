@@ -1,7 +1,9 @@
 // ignore_for_file: unused_import, prefer_const_constructors
 
-import 'package:app_ecocity/src/ui/theme/colors.dart';
-import 'package:app_ecocity/src/view/login.dart';
+import 'package:app_ecocity/main.dart';
+import 'package:app_ecocity/src/ui/theme/custom_colors.dart';
+import 'package:app_ecocity/src/ui/widgets/custom_buttons.dart';
+import 'package:app_ecocity/src/view/page_login.dart';
 import 'package:flutter/material.dart';
 
 class splashscreen extends StatefulWidget {
@@ -12,6 +14,18 @@ class splashscreen extends StatefulWidget {
 }
 
 class _MyStatefulWidgetState extends State<splashscreen> {
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      Future.delayed(Duration(seconds: 2), () {
+        if (mounted == true) {
+          Navigator.of(context).popAndPushNamed(Routes.splash);
+        }
+      });
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,21 +47,14 @@ class _MyStatefulWidgetState extends State<splashscreen> {
               ),
               Text(
                 "Seu app de sustentabilidade urbana",
-                style: TextStyle(color: ColorSystem.white, fontSize: 16),
+                style: TextStyle(color: CustomColors.white, fontSize: 16),
               ),
               SizedBox(
                 height: 20,
               ),
-              ElevatedButton(
-                  style: ButtonStyle(
-                      backgroundColor:
-                          MaterialStatePropertyAll(ColorSystem.primaryColor)),
-                  onPressed: () {
-                    Navigator.of(context)
-                        .push(MaterialPageRoute(builder: (context) => login()));
-                  },
-                  child: Text("Acessar",
-                      style: TextStyle(color: ColorSystem.white)))
+              CircularProgressIndicator(
+                color: CustomColors.primaryColor,
+              )
             ],
           ),
         )
