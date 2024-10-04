@@ -3,17 +3,17 @@
 import 'package:app_ecocity/main.dart';
 import 'package:app_ecocity/src/ui/theme/custom_colors.dart';
 import 'package:app_ecocity/src/ui/widgets/custom_buttons.dart';
-import 'package:app_ecocity/src/view/page_login.dart';
+import 'package:app_ecocity/src/view/page_accounts.dart';
 import 'package:flutter/material.dart';
 
-class splashscreen extends StatefulWidget {
-  const splashscreen({super.key});
+class CustomSplashscreen extends StatefulWidget {
+  const CustomSplashscreen({super.key});
 
   @override
-  State<splashscreen> createState() => _MyStatefulWidgetState();
+  State<CustomSplashscreen> createState() => _MyStatefulWidgetState();
 }
 
-class _MyStatefulWidgetState extends State<splashscreen> {
+class _MyStatefulWidgetState extends State<CustomSplashscreen> {
   @override
   void initState() {
     super.initState();

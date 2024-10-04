@@ -3,6 +3,7 @@
 import 'package:app_ecocity/src/ui/theme/custom_colors.dart';
 import 'package:app_ecocity/src/ui/theme/custom_font_style.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class CustomButton extends StatelessWidget {
   final VoidCallback? onPressed;
@@ -31,15 +32,17 @@ class CustomButton extends StatelessWidget {
         alignment: Alignment.center,
       ),
       child: iconData == null
-          ? Text(
-              title,
-              style: TextStyle(color: CustomColors.white),
-            )
+          ? Text(title,
+              style: GoogleFonts.poppins(
+                color: CustomColors.white,
+                fontSize: 14,
+                fontWeight: FontWeight.w400,
+              ))
           : Row(
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Icon(iconData, color: Colors.black87),
+                Icon(iconData, color: CustomColors.white),
                 const SizedBox(width: 16.0),
                 Text(title, style: TextStyle())
               ],
