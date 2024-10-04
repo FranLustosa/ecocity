@@ -1,7 +1,10 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:app_ecocity/main.dart';
 import 'package:app_ecocity/src/ui/theme/custom_colors.dart';
 import 'package:app_ecocity/src/ui/widgets/custom_buttons.dart';
+import 'package:app_ecocity/src/ui/widgets/map.dart';
+import 'package:app_ecocity/src/view/page_teste_map.dart';
 
 import 'package:flutter/material.dart';
 
@@ -48,13 +51,12 @@ class _MyWidgetState extends State<CustomLogin> {
             CustomButton(onPressed: () {}, title: "Acessar minha conta"),
             TextButton(
                 onPressed: () {
-                  Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => CustomLogin()));
+                  Navigator.of(context).pushNamed(Routes.map);
                 },
                 child: Text(
                   " Me cadastrar ",
                   style: TextStyle(color: CustomColors.highlightTextolor),
-                ))
+                )),
           ],
         ));
   }
