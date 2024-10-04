@@ -3,6 +3,7 @@ import 'package:app_ecocity/src/view/page_accounts.dart';
 import 'package:app_ecocity/src/view/page_create_account.dart';
 import 'package:app_ecocity/src/view/page_home.dart';
 import 'package:app_ecocity/src/view/page_login.dart';
+import 'package:app_ecocity/src/view/page_recycling.dart';
 import 'package:app_ecocity/src/view/page_splashscreen.dart';
 import 'package:app_ecocity/src/view/page_teste_map.dart';
 import 'package:flutter/material.dart';

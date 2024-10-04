@@ -51,7 +51,10 @@ class _HomeScreenState extends State<HomeScreen> {
                         'Agendar Coleta', 'assets/images/card1.png'),
                   ),
                   serviceCard('Descarte Correto', 'assets/images/card1.png'),
-                  serviceCard('Reciclagem', 'assets/images/card1.png'),
+                  serviceCard(
+                    'Reciclagem',
+                    'assets/images/card1.png',
+                  ),
                 ],
               ),
             ),

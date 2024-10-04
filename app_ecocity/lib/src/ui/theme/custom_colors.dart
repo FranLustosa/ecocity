@@ -1,4 +1,4 @@
-// ignore_for_file: use_full_hex_values_for_flutter_colors
+// ignore_for_file: use_full_hex_values_for_flutter_colors, constant_identifier_names
 
 import 'package:flutter/material.dart';
 
@@ -10,4 +10,5 @@ class CustomColors {
   static const Color textColor = Color(0xFF000000);
   static const Color white = Color(0xFFFFFFFF);
   static const Color error = Color.fromRGBO(252, 13, 28, 1);
+  static const Color cards_information = Color.fromRGBO(242, 242, 242, 1);
 }
