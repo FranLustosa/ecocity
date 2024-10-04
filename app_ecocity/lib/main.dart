@@ -1,6 +1,7 @@
 import 'package:app_ecocity/src/ui/theme/custom_colors.dart';
 import 'package:app_ecocity/src/view/page_accounts.dart';
 import 'package:app_ecocity/src/view/page_create_account.dart';
+import 'package:app_ecocity/src/view/page_home.dart';
 import 'package:app_ecocity/src/view/page_login.dart';
 import 'package:app_ecocity/src/view/page_splashscreen.dart';
 import 'package:app_ecocity/src/view/page_teste_map.dart';
@@ -30,6 +31,7 @@ class MyApp extends StatelessWidget {
         Routes.login: (context) => CustomLogin(),
         Routes.logout: (context) => CustomLogin(),
         Routes.register: (context) => CustomRegister(),
+        Routes.home: (context) => HomeScreen(),
       },
       home: const CustomSplashscreen(),
     );

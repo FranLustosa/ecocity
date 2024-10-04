@@ -113,7 +113,7 @@ class _CustomLoginState extends State<CustomLogin> {
                   SizedBox(height: 20),
                   CustomButton(
                       onPressed: () {
-                        Navigator.of(context).pushNamed(Routes.login);
+                        Navigator.of(context).pushNamed(Routes.home);
                       },
                       title: "Acessar"),
                 ],
