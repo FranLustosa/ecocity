@@ -24,16 +24,14 @@ class _CustomRegisterState extends State<CustomRegister> {
       TextEditingController();
 
   final GoogleSignIn _googleSignIn =
-      GoogleSignIn(); // Instância do GoogleSignIn
+      GoogleSignIn();
 
-  // Função para realizar o cadastro com o Google
   Future<void> _handleGoogleSignIn() async {
     try {
       final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
       if (googleUser != null) {
-        // Caso o usuário escolha uma conta
+
         print("Usuário logado com o Google: ${googleUser.displayName}");
-        // Aqui você pode fazer o redirecionamento ou salvar as informações do usuário
         Navigator.of(context).pushNamed(Routes.home);
       }
     } catch (error) {
@@ -87,13 +85,11 @@ class _CustomRegisterState extends State<CustomRegister> {
             ),
             SizedBox(height: 40),
 
-            // Formulário de Cadastro
             Form(
               key: _formKey,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  // Campo Nome Completo
                   TextFormField(
                     controller: _nameController,
                     decoration: InputDecoration(
@@ -112,8 +108,6 @@ class _CustomRegisterState extends State<CustomRegister> {
                     },
                   ),
                   SizedBox(height: 12),
-
-                  // Campo E-mail
                   TextFormField(
                     controller: _emailController,
                     decoration: InputDecoration(
@@ -136,8 +130,6 @@ class _CustomRegisterState extends State<CustomRegister> {
                     },
                   ),
                   SizedBox(height: 12),
-
-                  // Campo Senha
                   TextFormField(
                     controller: _passwordController,
                     decoration: InputDecoration(
@@ -159,8 +151,6 @@ class _CustomRegisterState extends State<CustomRegister> {
                     },
                   ),
                   SizedBox(height: 12),
-
-                  // Campo Confirmar Senha
                   TextFormField(
                     controller: _confirmPasswordController,
                     decoration: InputDecoration(

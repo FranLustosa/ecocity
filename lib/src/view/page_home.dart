@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
+import 'package:app_ecocity/main.dart';
 import 'package:app_ecocity/src/ui/theme/custom_colors.dart';
 import 'package:app_ecocity/src/ui/widgets/custom_appbar.dart';
 import 'package:app_ecocity/src/ui/widgets/custom_navigationbar.dart';
@@ -44,9 +45,11 @@ class _HomeScreenState extends State<HomeScreen> {
                   childAspectRatio: 1,
                 ),
                 children: [
-                  serviceCard('Coleta Seletiva', 'assets/images/card1.png'),
+                  serviceCard('Coleta Seletiva', 'assets/images/card1.png',),
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.of(context).pushNamed(Routes.map);
+                    },
                     child: serviceCard(
                         'Agendar Coleta', 'assets/images/card1.png'),
                   ),

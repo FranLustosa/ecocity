@@ -40,48 +40,34 @@ class _OSMState extends State<OsmImplemetation> {
 
   @override
   Widget build(BuildContext context) {
-    double sizeWidth = MediaQuery.of(context).size.width;
-    double sizeHeight = MediaQuery.of(context).size.height;
-
-    return Center(
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(30),
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 24),
-          child: SizedBox(
-            width: sizeWidth * 0.8,
-            height: sizeHeight * 0.65,
-            child: OSMFlutter(
-              mapIsLoading: mapIsLoading(
-                context,
-                sizeWidth / 10,
-                sizeHeight / 7,
-              ),
-              onMapIsReady: (mapEvent) async {
-                await limitAreaMap();
-                await drawnTocantinsMap();
-                await geoPointsMap();
-              },
-              onGeoPointClicked: (geopoint) {
-                print(geopoint);
-                GeoPoint(latitude: 0, longitude: 0) == geopoint
-                    ? print("sim")
-                    : print("nao");
-              },
-              controller: mapController,
-              osmOption: const OSMOption(
-                zoomOption: ZoomOption(
-                  // Zoom para fixar no Tocantins
-                  initZoom: 6.48505,
-                  minZoomLevel: 6.48505,
-                  maxZoomLevel: 19,
-                ),
-                showContributorBadgeForOSM: true,
-                showDefaultInfoWindow: true,
-                showZoomController: false,
-              ),
-            ),
+    return Scaffold(
+      body: OSMFlutter(
+        mapIsLoading: mapIsLoading(
+          context,
+          MediaQuery.of(context).size.width / 10,
+          MediaQuery.of(context).size.height / 7,
+        ),
+        onMapIsReady: (mapEvent) async {
+          await limitAreaMap();
+          await drawnTocantinsMap();
+          await geoPointsMap();
+        },
+        onGeoPointClicked: (geopoint) {
+          print(geopoint);
+          GeoPoint(latitude: 0, longitude: 0) == geopoint
+              ? print("sim")
+              : print("nao");
+        },
+        controller: mapController,
+        osmOption: const OSMOption(
+          zoomOption: ZoomOption(
+            initZoom: 6.48505,
+            minZoomLevel: 6.48505,
+            maxZoomLevel: 19,
           ),
+          showContributorBadgeForOSM: true,
+          showDefaultInfoWindow: true,
+          showZoomController: false,
         ),
       ),
     );
