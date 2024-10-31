@@ -4,6 +4,7 @@ import 'package:app_ecocity/src/model/model_util.dart';
 import 'package:app_ecocity/src/ui/theme/custom_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_osm_plugin/flutter_osm_plugin.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class OsmImplemetation extends StatefulWidget {
   const OsmImplemetation({
@@ -55,10 +56,8 @@ class _OSMState extends State<OsmImplemetation> {
         onGeoPointClicked: (geopoint) async {
           final Uri url = Uri.parse(
               'https://www.google.com/maps/@${geopoint.latitude},${geopoint.longitude},15z');
-
-          // Verifica se a URL pode ser lançada e a lança
-          if (await canLaunchUrl(url)) {
-            await launchUrl(url);
+          if (await canLaunch(url.toString())) {
+            await launch(url.toString());
           } else {
             throw 'Could not launch $url';
           }
@@ -289,8 +288,4 @@ class _OSMState extends State<OsmImplemetation> {
       ),
     );
   }
-
-  canLaunchUrl(Uri url) {}
-
-  launchUrl(Uri url) {}
 }
