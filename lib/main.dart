@@ -1,9 +1,13 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:app_ecocity/src/ui/theme/custom_colors.dart';
 import 'package:app_ecocity/src/view/page_accounts.dart';
+import 'package:app_ecocity/src/view/page_correct_disposal.dart';
 import 'package:app_ecocity/src/view/page_create_account.dart';
 import 'package:app_ecocity/src/view/page_home.dart';
 import 'package:app_ecocity/src/view/page_login.dart';
 import 'package:app_ecocity/src/view/page_recycling.dart';
+import 'package:app_ecocity/src/view/page_schedule_collection.dart';
 import 'package:app_ecocity/src/view/page_splashscreen.dart';
 import 'package:app_ecocity/src/view/page_teste_map.dart';
 import 'package:flutter/material.dart';
@@ -33,6 +37,7 @@ class MyApp extends StatelessWidget {
         Routes.logout: (context) => CustomLogin(),
         Routes.register: (context) => CustomRegister(),
         Routes.home: (context) => HomeScreen(),
+        Routes.correctdisposal: (context) => CustomCorrectDisposal()
       },
       home: const CustomSplashscreen(),
     );
@@ -47,4 +52,6 @@ class Routes {
   static String logout = "sair/";
   static String home = "inicio/";
   static String register = "cadastro/";
+  static String schedulecollection = "agendar/";
+  static String correctdisposal = "descarte/";
 }

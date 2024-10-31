@@ -52,11 +52,16 @@ class _OSMState extends State<OsmImplemetation> {
           await drawnTocantinsMap();
           await geoPointsMap();
         },
-        onGeoPointClicked: (geopoint) {
-          print(geopoint);
-          GeoPoint(latitude: 0, longitude: 0) == geopoint
-              ? print("sim")
-              : print("nao");
+        onGeoPointClicked: (geopoint) async {
+          final Uri url = Uri.parse(
+              'https://www.google.com/maps/@${geopoint.latitude},${geopoint.longitude},15z');
+
+          // Verifica se a URL pode ser lançada e a lança
+          if (await canLaunchUrl(url)) {
+            await launchUrl(url);
+          } else {
+            throw 'Could not launch $url';
+          }
         },
         controller: mapController,
         osmOption: const OSMOption(
@@ -284,4 +289,8 @@ class _OSMState extends State<OsmImplemetation> {
       ),
     );
   }
+
+  canLaunchUrl(Uri url) {}
+
+  launchUrl(Uri url) {}
 }
