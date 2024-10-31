@@ -276,6 +276,7 @@ class _OSMState extends State<OsmImplemetation> {
             size: 30,
           ),
         ));
+        
   }
 
   Future<void> limitAreaMap() async {
